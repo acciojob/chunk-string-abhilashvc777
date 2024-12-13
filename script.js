@@ -1,10 +1,13 @@
 function stringChop(str, size) {
   // your code here
 	let arr = [];
+	if(!str){
+		return []
+	}
 	let new_arr = str.split("")
 	let length = new_arr.length
 	for(let i=0; i<=length-1; i++){
-        if(length<=size){
+        if(length<=size && length){
 		   arr.push(new_arr.slice(0,length).join(""))
         }else{
             arr.push(new_arr.slice(0,size).join(""))
@@ -20,10 +23,10 @@ function stringChop(str, size) {
    for(let i=0; i<length1; i++){
     arr1.push(arr[i])
    }
-   return arr1;
+	   return arr1
 }
 
 // Do not change the code below
 const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");  
+const size = prompt("Enter Chunk Size.");    
 alert(stringChop(str, size));
